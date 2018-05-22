@@ -27,7 +27,7 @@ new HtmlWebpackPlugin({
 
 This plugin fix the problem from the origin one:
 > ERROR in   TypeError: callback is not a function
-  
-  - index.js:35 
-    [ex-child-webpack]/[html-webpack-inject-attributes-plugin]/index.js:35:13
+>  
+>  - index.js:35 
+>    [ex-child-webpack]/[html-webpack-inject-attributes-plugin]/index.js:35:13
 
