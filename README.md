@@ -1,51 +1,33 @@
-add custom attributes to inject tags
-
-### install
-
-```javascript
-   npm install html-webpack-inject-attributes-plugin
+#HTML Webpack Plugin Cross Origin
+This plugin is a fork from [html-webpack-inject-attributes-plugin](https://github.com/dyw934854565/html-webpack-inject-attributes-plugin)(v1.0.0). Fix the problems for new version html-webpack-plugin (3.2.0).
+```bash
+npm i --save-dev html-webpack-plugin-crossorigin
 ```
-
-### use
-
-add to all inject tags
+##Usage
 ```javascript
-    plugins = [
-        new htmlWebpackInjectAttributesPlugin({
-            inject: "true"
-        })  // Object, key should be string, value can be string or function
-    ]
-```
-you got
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPluginCrossorigin = require('html-webpack-plugin-crossorigin');
 
-```html
-    <script type="text/javascript" src="index.js" inject="true"></script>
-```
-
-add to chunks in HtmlWebpackPlugin
-by add attributes to HtmlWebpackPlugin
-
-```javascript
-    plugins = [
+new HtmlWebpackPlugin({
+    plugins: [
         new HtmlWebpackPlugin({
-            inject: true,
-            hash: true,
-            chunks: ['index'],
+            filename: 'test.html',
+            template: 'src/assets/test.html'
+            // add script attributes here!
             attributes: {
-                'data-src': function (tag) { return tag.attributes.src }
-            },
-        })  // Object, key and value should be string
+                crossorigin: 'anonymous'
+            }
+        }),
+        // this one should be placed after HtmlWebpackPlugin
+        new HtmlWebpackPluginCrossorigin({
+            inject: true
+        })
     ]
-    /**
-     *  if value is a function, got three arguments。
-     *  1、tag, ast of tag node
-     *  2、compilation, you can get webpack build hash by compilation.hash
-     *  3、index, index of trunks
-    **/
-```
+});
 
-you got
+This plugin fix the problem from the origin one:
+> ERROR in   TypeError: callback is not a function
+  
+  - index.js:35 
+    [ex-child-webpack]/[html-webpack-inject-attributes-plugin]/index.js:35:13
 
-```html
-    <script type="text/javascript" src="index.js" data-src="index.js" inject="true"></script>
-```

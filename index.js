@@ -30,7 +30,11 @@ MyPlugin.prototype.apply = function (compiler) {
                 addAttr(htmlPluginData.head, key, val);
                 addAttr(htmlPluginData.body, key, val);
             });
-            callback(null, htmlPluginData);
+            if (typeof callback === 'function') {
+                callback(null, htmlPluginData);
+            } else {
+                return new Promise(resolve => resolve(htmlPluginData));
+            }
         });
     });
 
