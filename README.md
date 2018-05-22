@@ -24,6 +24,7 @@ new HtmlWebpackPlugin({
         })
     ]
 });
+```
 
 This plugin fixed the problem from the origin one:
 > ERROR in   TypeError: callback is not a function

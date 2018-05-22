@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-plugin-crossorigin",
-  "version": "3.2.2",
+  "version": "1.0.3",
   "description": "add custom attributes to inject script and link",
   "main": "index.js",
   "scripts": {
