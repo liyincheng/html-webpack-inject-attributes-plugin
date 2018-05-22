@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-inject-attributes-plugin",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "add custom attributes to inject script and link",
   "main": "index.js",
   "scripts": {
@@ -14,14 +14,11 @@
     "html-webpack-plugin",
     "inject",
     "attributes",
-    "webpack"
+    "webpack",
+    "crossorigin"
   ],
-  "author": "dyw934854565@sina.com",
+  "author": "Yincheng Li",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dyw934854565/html-webpack-inject-attributes-plugin/issues"
-  },
-  "homepage": "https://github.com/dyw934854565/html-webpack-inject-attributes-plugin#readme",
   "dependencies": {
     "lodash.assign": "^4.2.0",
     "lodash.foreach": "^4.5.0"
