@@ -18,7 +18,7 @@
     "crossorigin"
   ],
   "author": "Yincheng Li",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "lodash.assign": "^4.2.0",
     "lodash.foreach": "^4.5.0"
