@@ -27,7 +27,7 @@ new HtmlWebpackPlugin({
 ```
 It will add the `crossorigin=anonymous` to script tag like:
 ```html
-<script src="index.js" crossorigin=anonymous></script>
+<script src="index.js" crossorigin="anonymous"></script>
 ```
 
 This plugin fixed the problem from the origin one:
