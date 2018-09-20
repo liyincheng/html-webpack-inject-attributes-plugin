@@ -18,11 +18,13 @@ MyPlugin.prototype.apply = function (compiler) {
                 if (typeof val === 'function') {
                     value = val(tag, compilation, index);
                 }
+                !tag.attributes && (tag.attributes = {});
                 tag.attributes[key] = value;
             });
         }
+        // compiler.hooks.emit.tapAsync('html-webpack-plugin-alter-asset-tags', function (htmlPluginData, callback) {
         compilation.plugin('html-webpack-plugin-alter-asset-tags', function (htmlPluginData, callback) {
-            var options = assign({}, self.options, htmlPluginData.plugin.options && htmlPluginData.plugin.options.attributes);
+            var options = assign({}, null, htmlPluginData.plugin.options && htmlPluginData.plugin.options.attributes);
             forEach(options, function(val, key) {
                 if (typeof val !== 'string' && typeof val !== 'function') {
                     return;
@@ -33,7 +35,8 @@ MyPlugin.prototype.apply = function (compiler) {
             if (typeof callback === 'function') {
                 callback(null, htmlPluginData);
             } else {
-                return new Promise(resolve => resolve(htmlPluginData));
+                // return new Promise(resolve => resolve(htmlPluginData));
+                return htmlPluginData;
             }
         });
     });
