@@ -1,14 +1,14 @@
 {
   "name": "html-webpack-plugin-crossorigin",
-  "version": "1.0.4",
-  "description": "add custom attributes to inject script and link",
+  "version": "1.0.5",
+  "description": "Adapt webpack 4: add custom attributes to inject script and link",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dyw934854565/html-webpack-inject-attributes-plugin.git"
+    "url": "https://github.com/liyincheng/html-webpack-inject-attributes-plugin"
   },
   "keywords": [
     "html-webpack-plugin",
