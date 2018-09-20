@@ -1,5 +1,5 @@
-#HTML Webpack Plugin Cross Origin （Webpack 4）
-This plugin is a fork from [html-webpack-inject-attributes-plugin](https://github.com/dyw934854565/html-webpack-inject-attributes-plugin)(v1.0.0). Fix the problems for new version html-webpack-plugin (3.2.0).
+#HTML Webpack Plugin Cross Origin (Webpack 4)
+This plugin adapt [html-webpack-inject-attributes-plugin](https://github.com/dyw934854565/html-webpack-inject-attributes-plugin)(v1.0.0) for webpack 4.
 ```bash
 npm i --save-dev html-webpack-plugin-crossorigin
 ```
@@ -24,6 +24,10 @@ new HtmlWebpackPlugin({
         })
     ]
 });
+```
+It will add the `crossorigin=anonymous` to script tag like:
+```html
+<script src="index.js" crossorigin=anonymous></script>
 ```
 
 This plugin fixed the problem from the origin one:
